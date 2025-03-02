@@ -22,9 +22,9 @@ jobs:
             python3 -m pip install --upgrade pip
             pip install Flask
             pip install requests
-      - name: Start development server
-        run:
+      - name: Start development server and tests
+        run: |
             python3 app.py
+            python3 tests.py
 
-      - name: Run tests
-        run: python3  tests.py
+    
