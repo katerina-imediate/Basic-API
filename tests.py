@@ -1,7 +1,7 @@
 import requests
 import unittest
 import json
-import app from app
+import app
 
 BASE_URL= "http://localhost:5000"
 
