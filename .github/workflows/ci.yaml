@@ -19,11 +19,10 @@ jobs:
             python-version: 3.12
       - name: Install dependencies
         run:
-            pip install flask
             pip install requests
       - name: Start development server
         run:
-            flask run
+            python3 app.py
 
       - name: Run tests
         run: python3  tests.py
