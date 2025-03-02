@@ -1,7 +1,6 @@
-This is very basic Python REST API with Flask and SQLite as the database.
+This is very basic Python REST API with Flask and SQLite as database.
 The application implements endpoint that retrieves users from database, and performs CRUD operations on data.  
-Flask is installed via command
-  'pip install Flask'
+Flask is installed via command 'pip install flask'
 The app can be staretd wth command 
 'flask run' or 
 'python3 app.py'. 
