@@ -35,7 +35,7 @@ jobs:
             python3 -m pip install --upgrade pip
             pip install Flask
             pip install requests
-            pip install jsonify
+#            pip install jsonify
 
       - name: Create Db
         run: |
