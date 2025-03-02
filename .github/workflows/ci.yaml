@@ -12,7 +12,7 @@ env:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -20,6 +20,12 @@ jobs:
         uses: actions/setup-python@v1
         with:
             python-version: 3.12
+      - name: Virtual Env
+        run: |
+          sudo apt install python3.12-venv -y
+          python3 -m venv venv
+          source venv/bin/activate
+
       - name: Install dependencies
         run: |
             python3 -m pip install --upgrade pip
