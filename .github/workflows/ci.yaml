@@ -38,7 +38,7 @@ jobs:
             pip install jsonify
 
       - name: Create Db
-        run:
+        run: |
           python3 create_database.py
           python3 app.py
       - name: Run tests
