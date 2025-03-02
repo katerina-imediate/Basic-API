@@ -24,7 +24,7 @@ jobs:
             pip install requests
       - name: Start development server and tests
         run: |
-            python3 app.py
+#            python3 app.py
             python3 tests.py
 
     
