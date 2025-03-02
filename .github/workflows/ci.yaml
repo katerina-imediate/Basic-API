@@ -18,7 +18,9 @@ jobs:
         with:
             python-version: 3.12
       - name: Install dependencies
-        run:
+        run: |
+            python3 -m pip install --upgrade pip
+            pip install Flask
             pip install requests
       - name: Start development server
         run:
