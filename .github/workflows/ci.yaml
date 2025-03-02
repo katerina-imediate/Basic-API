@@ -11,7 +11,7 @@ on:
 
 
 jobs:
-  build:
+  Build-test-deploy:
     runs-on: ubuntu-latest
 
     steps:
