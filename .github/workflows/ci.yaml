@@ -35,12 +35,12 @@ jobs:
             python3 -m pip install --upgrade pip
             pip install Flask
             pip install requests
-            pip install -r requirements.txt
+            pip install jsonify
 
       - name: Create Db
         run:
           python3 create_database.py
-
+          python3 app.py
       - name: Run tests
         run:
             python3 -m  unittest
