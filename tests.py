@@ -2,16 +2,12 @@ import requests
 import unittest
 import json
 
-
-
-
 BASE_URL= "http://localhost:5000"
 
 class APITestCase(unittest.TestCase):
     def test_requests(self):
 
 ## Post request test
-
         user = {
         "id": 15,
         "email": "trst@test.com",
@@ -30,7 +26,6 @@ class APITestCase(unittest.TestCase):
         print(invalid_idresponse.status_code)
 
 ## Put request test
-
         get_id= requests.get(BASE_URL  + "/users/6")
         print(get_id.text)
 
@@ -44,7 +39,6 @@ class APITestCase(unittest.TestCase):
         print(update_response.text)
 
 ## Delete request test
-
         delete_response=requests.delete(BASE_URL + "/users/7")
         self.assertEqual(delete_response.status_code, 200, "Unexpected status code")
         print(delete_response.text)
@@ -53,7 +47,6 @@ class APITestCase(unittest.TestCase):
         delete_invalid=requests.delete(BASE_URL + "/users/jgjh")
         self.assertEqual(delete_invalid.status_code, 404, "Unexpected status code")
         print(delete_invalid.text)
-
 
 
 if __name__ == "__main__":

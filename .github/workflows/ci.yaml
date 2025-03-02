@@ -1,17 +1,21 @@
 name: Python api tests
 
-on: [push]
+on:
+  push:
+    tags:
+      - '!refs/tags/*'
+    branches:
+      - 'master'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v3
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
         with:
-        python-version: '3.8'
-      - name: Test
-        uses: onichandame/python-test-action@master
-
+            python-version: 3.12
+      - name: Run tests
+        run: python3  tests.py

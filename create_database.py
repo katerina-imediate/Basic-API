@@ -1,16 +1,12 @@
 import sqlite3
 
-## Create a connection to the database
-conn = sqlite3.connect('users.db')
 
-## Create a cursor object to execute SQL statements
+conn = sqlite3.connect('users.db')
 cursor = conn.cursor()
 print('DB Init')
 
 query = 'select sqlite_version();'
 cursor.execute(query)
-
-## Fetch and output result
 result = cursor.fetchall()
 print('SQLite Version is {}'.format(result))
 
@@ -21,7 +17,7 @@ cursor.execute('''CREATE TABLE users(
                     email TEXT,
                     address TEXT
                 )''')
-## Insert sample data into the "users" table
+## Insert  data into the "users" table
 cursor.execute('''INSERT INTO users VALUES ('1', 'John Doe', 'johndoe@example.com', 'England'),
 ('2' ,'Jane Smith', 'janesmith@example.com', 'Germany'),('3', 'Bob Johnson', 'bobjohnson@example.com', 'France')''')
 
@@ -31,9 +27,7 @@ data=cursor.execute('''SELECT * FROM users''')
 for row in data:
     print(row)
 
-## Commit the changes to the database
 conn.commit()
 
-## Close the cursor and the database connection
 cursor.close()
 conn.close()
