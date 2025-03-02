@@ -36,6 +36,11 @@ jobs:
             pip install Flask
             pip install requests
             pip install -r requirements.txt
+
+      - name: Create Db
+        run:
+          python3 create_database.py
+
       - name: Run tests
         run:
             python3 -m  unittest
