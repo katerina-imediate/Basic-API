@@ -1,7 +1,7 @@
 This is very basic Python REST API in Flask using SQLite as the database.
 
 Just create app.py and install flask via command
-  pip install Flask
+  'pip install Flask'
 
 The app can be staretd wth command 
 'flask run' or 
