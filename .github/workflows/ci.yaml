@@ -21,6 +21,9 @@ jobs:
         run:
 #            python -m pip install --upgrade pip
             pip install requests
+      - name: Start development server
+        run:
+            flask run
 
       - name: Run tests
         run: python3  tests.py
