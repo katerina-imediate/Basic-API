@@ -5,6 +5,7 @@ The app can be staretd wth command
 'flask run' or 
 'python3 app.py'. 
 "This will start a develpment server on http://127.0.0.1:5000.
-API tests are covering all application methods  - Get, Post, Put and Delete, using unnitest library via command 'python3 tests.py'
+API calls are send directly the development server, no mocks are used. Tests are using unnitest library, and can be run via command 'python3 tests.py'.
+
 
 
