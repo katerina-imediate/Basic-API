@@ -24,10 +24,7 @@ jobs:
         with:
             python-version: 3.12
 
-      - name: Virtual Env
-        run: |
-          python3 -m venv venv
-          source .venv/bin/activate
+
 
       - name: Install dependencies
         run: |
