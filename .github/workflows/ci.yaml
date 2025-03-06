@@ -33,9 +33,10 @@ jobs:
             pip install requests
 #            pip install jsonify
 
-      - name: Create Db
+      - name: Create Db Run Tests
         run: |
           python3 create_database.py
+          flask run
           python3 -m  unittest
         env:
           DATABASE_FILENAME: users.db
