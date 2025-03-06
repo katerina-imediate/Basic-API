@@ -1,20 +1,22 @@
+
 import requests
 import unittest
-import json
-import app
 
 BASE_URL= "http://localhost:5000"
 
-class APITestCase(unittest.TestCase):
-    def test_requests(self):
 
+class MyTest(unittest.TestCase):
+
+    def test_requests(self):
 ## Post request test
+
         user = {
         "id": 15,
         "email": "trst@test.com",
         "name": "Kat",
         "address": "This is the data we created."
 }
+        BASE_URL= "http://127.0.0.1:5000"
         headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
         response = requests.post(BASE_URL  + "/users", json=user, headers=headers)
 
