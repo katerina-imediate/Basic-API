@@ -38,8 +38,8 @@ jobs:
           python3 create_database.py
           flask run & python3 -m  unittest
 
-        env:
-          DATABASE_FILENAME: users.db
+#        env:
+#          DATABASE_FILENAME: users.db
 
 
 
