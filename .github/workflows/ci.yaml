@@ -6,9 +6,6 @@ on:
       - '!refs/tags/*'
     branches:
       - 'master'
-#env:
-#  localhost: http://127.0.0.1:5000
-
 
 jobs:
   Build-test-deploy:
@@ -18,22 +15,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
             python-version: 3.12
-
-
 
       - name: Install dependencies
         run: |
             python3 -m pip install --upgrade pip
             pip install Flask
             pip install requests
-#            pip install jsonify
 
-      - name: Create Db Run Tests
+      - name: Create database, run locally & test
         run: |
           python3 create_database.py
           flask run & python3 -m  unittest

@@ -28,26 +28,27 @@ class MyTest(unittest.TestCase):
         self.assertEqual(invalid_idresponse.status_code, 200, "Unexpected status code")
         print(invalid_idresponse.json())
 
-## Get invalid user ID test
-        invalid_idresponse = requests.get(BASE_URL  + "/users/90")
-        self.assertEqual(invalid_idresponse.status_code, 404, "Unexpected status code")
-        print(invalid_idresponse.status_code)
+## Not allowed 405 test
+        invalid_idresponse = requests.patch(BASE_URL  + "/users/1")
+        self.assertEqual(invalid_idresponse.status_code, 405, "Unexpected status code")
+        print(invalid_idresponse.status_code, invalid_idresponse.text)
 
 ## Put request test
-        get_id= requests.get(BASE_URL  + "/users/6")
+        get_id= requests.get(BASE_URL  + "/users/")
         print(get_id.text)
 
-        update_user={"id": 15,
+        update_user={
         "email": "updated@test.com",
         "name": "Update",
         "address": "This is the updated user"
 }
-        update_response=requests.put(BASE_URL + "/users/6", json=update_user, headers=headers)
+        update_response=requests.put(BASE_URL + "/users/1", json=update_user, headers=headers)
         self.assertEqual(update_response.status_code, 200, "Unexpected status code")
+        print(update_user)
         print(update_response.text)
 
 ## Delete request test
-        delete_response=requests.delete(BASE_URL + "/users/7")
+        delete_response=requests.delete(BASE_URL + "/users/3")
         self.assertEqual(delete_response.status_code, 200, "Unexpected status code")
         print(delete_response.text)
 
