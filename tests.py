@@ -23,6 +23,11 @@ class MyTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200, "Unexpected status code")
         print(response.status_code, response.text)
 
+## Get all userstest
+        invalid_idresponse = requests.get(BASE_URL  + "/users")
+        self.assertEqual(invalid_idresponse.status_code, 200, "Unexpected status code")
+        print(invalid_idresponse.json())
+
 ## Get invalid user ID test
         invalid_idresponse = requests.get(BASE_URL  + "/users/90")
         self.assertEqual(invalid_idresponse.status_code, 404, "Unexpected status code")
@@ -49,7 +54,7 @@ class MyTest(unittest.TestCase):
 ## Delete invalid user
         delete_invalid=requests.delete(BASE_URL + "/users/jgjh")
         self.assertEqual(delete_invalid.status_code, 404, "Unexpected status code")
-        print(delete_invalid.text)
+        # print(delete_invalid.text)
 
 
 if __name__ == "__main__":
