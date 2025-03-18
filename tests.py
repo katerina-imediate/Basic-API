@@ -52,9 +52,9 @@ class MyTest(unittest.TestCase):
         print(delete_response.text)
 
 ## Delete invalid user
-        delete_invalid=requests.delete(BASE_URL + "/users/jgjh")
+        delete_invalid=requests.delete(BASE_URL + "/users/denver")
         self.assertEqual(delete_invalid.status_code, 404, "Unexpected status code")
-        # print(delete_invalid.text)
+        print(delete_invalid.text)
 
 
 if __name__ == "__main__":
