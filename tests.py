@@ -8,8 +8,8 @@ BASE_URL= "http://localhost:5000"
 class MyTest(unittest.TestCase):
 
     def test_requests(self):
-## Post request test
 
+## Post request test
         user = {
         "id": 15,
         "email": "trst@test.com",
@@ -53,7 +53,7 @@ class MyTest(unittest.TestCase):
         print(delete_response.text)
 
 ## Delete invalid user
-        delete_invalid=requests.delete(BASE_URL + "/users/denver")
+        delete_invalid=requests.put(BASE_URL + "/users/4")
         self.assertEqual(delete_invalid.status_code, 404, "Unexpected status code")
         print(delete_invalid.text)
 
