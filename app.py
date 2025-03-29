@@ -75,6 +75,7 @@ def update_user(user_id):
     name = data['name']
     email = data['email']
 
+
     ## Connect to the database
     conn = sqlite3.connect('users.db')
     cursor = conn.cursor()
