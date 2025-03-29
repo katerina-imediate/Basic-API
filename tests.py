@@ -47,7 +47,7 @@ class MyTest(unittest.TestCase):
         print(update_response.text)
 
 ## Delete request test
-        delete_response=requests.delete(BASE_URL + "/users/")
+        delete_response=requests.delete(BASE_URL + "/users/3")
         self.assertEqual(delete_response.status_code, 200, "Unexpected status code")
         print(delete_response.text)
 
