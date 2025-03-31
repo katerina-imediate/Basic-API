@@ -57,7 +57,7 @@ class MyTest(unittest.TestCase):
         #self.assertEqual(delete_invalid.status_code, 404, "Unexpected status code")
         response=requests.get(BASE_URL + "/users/3")
         print(response.content)
-        print(delete_invalid.content)
+        print(delete_invalid.status_code)
 
 ## 415 Unsupported Media Type error test
         delete_invalid=requests.put(BASE_URL + "/users/1")
