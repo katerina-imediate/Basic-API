@@ -53,10 +53,10 @@ class MyTest(unittest.TestCase):
 
 ## Delete invalid user
         delete_invalid=requests.delete(BASE_URL + "/users/3")
-# returns 200 for deleted id, add check in delete method
+# returns 200 for non-existing id, add check in delete method
         #self.assertEqual(delete_invalid.status_code, 404, "Unexpected status code")
         response=requests.get(BASE_URL + "/users/3")
-        print(response.content)
+        print(response.content,  response.status_code)
         print(delete_invalid.status_code)
 
 ## 415 Unsupported Media Type error test
