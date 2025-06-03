@@ -1,4 +1,3 @@
-
 import requests
 import unittest
 
@@ -33,8 +32,8 @@ class MyTest(unittest.TestCase):
         print(invalid_idresponse.status_code, invalid_idresponse.text)
 
 ## Put request test
-        get_id= requests.get(BASE_URL  + "/users/")
-        print(get_id.text)
+        # get_id= requests.get(BASE_URL  + "/users/")
+        # print(get_id.text)
 
         update_user={
         "email": "updated@test.com",
@@ -49,15 +48,15 @@ class MyTest(unittest.TestCase):
 ## Delete request test
         delete_response=requests.delete(BASE_URL + "/users/3")
         self.assertEqual(delete_response.status_code, 200, "Unexpected status code")
-        print(delete_response.text)
+        print(delete_response.text, delete_response.status_code)
 
 ## Delete invalid user
         delete_invalid=requests.delete(BASE_URL + "/users/3")
 # returns 200 for non-existing id, add check in delete method
-        #self.assertEqual(delete_invalid.status_code, 404, "Unexpected status code")
+#       self.assertEqual(delete_invalid.text, "User not found", "Unexpected status code")
         response=requests.get(BASE_URL + "/users/3")
         print(response.content,  response.status_code)
-        print(delete_invalid.status_code)
+        # print(delete_invalid.status_code)
 
 ## 415 Unsupported Media Type error test
         delete_invalid=requests.put(BASE_URL + "/users/1")
