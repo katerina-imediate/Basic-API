@@ -32,8 +32,6 @@ class MyTest(unittest.TestCase):
         print(invalid_idresponse.status_code, invalid_idresponse.text)
 
 ## Put request test
-        # get_id= requests.get(BASE_URL  + "/users/")
-        # print(get_id.text)
 
         update_user={
         "email": "updated@test.com",
