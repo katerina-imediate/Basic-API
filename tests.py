@@ -48,10 +48,8 @@ class MyTest(unittest.TestCase):
         self.assertEqual(delete_response.status_code, 200, "Unexpected status code")
         print(delete_response.text, delete_response.status_code)
 
-## Delete invalid user
-        delete_invalid=requests.delete(BASE_URL + "/users/3")
-# returns 200 for non-existing id, add check in delete method
-#       self.assertEqual(delete_invalid.text, "User not found", "Unexpected status code")
+
+## Get deleted user test 404
         response=requests.get(BASE_URL + "/users/3")
         print(response.content,  response.status_code)
         # print(delete_invalid.status_code)
@@ -63,8 +61,9 @@ class MyTest(unittest.TestCase):
 
         response=requests.get(BASE_URL + "/users")
         self.assertEqual(response.status_code, 200, "Unexpected status code")
+        print(response.text,response.status_code)
 
-        print(response.text)
+
 
 if __name__ == "__main__":
     unittest.main()
