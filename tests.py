@@ -51,8 +51,8 @@ class MyTest(unittest.TestCase):
 
 ## Get deleted user test 404
         response=requests.get(BASE_URL + "/users/3")
+        self.assertEqual(response.status_code, 404, "Incorrect status code")
         print(response.content,  response.status_code)
-        # print(delete_invalid.status_code)
 
 ## 415 Unsupported Media Type error test
         delete_invalid=requests.put(BASE_URL + "/users/1")
