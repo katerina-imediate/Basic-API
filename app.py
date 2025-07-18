@@ -1,4 +1,6 @@
 import json
+
+from docutils.nodes import address
 from flask import Flask, jsonify, request
 import sqlite3
 
@@ -74,6 +76,7 @@ def update_user(user_id):
     data = request.get_json()
     name = data['name']
     email = data['email']
+    address = data['address']
 
 
     ## Connect to the database
@@ -81,7 +84,7 @@ def update_user(user_id):
     cursor = conn.cursor()
 
     ## Execute the SQL query to update the user
-    cursor.execute('UPDATE users SET name = ?, email = ? WHERE id = ?', (name, email, user_id))
+    cursor.execute('UPDATE users SET name = ?, email = ?,  address = ? WHERE id = ?', (name, email, address,user_id))
     conn.commit()
 
     ## Close the cursor and the database connection
